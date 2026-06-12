@@ -38,7 +38,7 @@ export default function Login() {
       : formData;
 
     try {
-      const response = await axios.post(`http://127.0.0.1:8000${endpoint}`, payload);
+      const response = await axios.post(`http://rentaljek.com${endpoint}`, payload);
       
       // Store token and user data
       localStorage.setItem('user_token', response.data.data.access_token);

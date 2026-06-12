@@ -65,7 +65,7 @@ function App() {
 
   const fetchCars = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/api/cars');
+      const response = await axios.get('http://rentaljek.com/api/cars');
       setCars(response.data.data);
       setLoading(false);
     } catch (error) {

@@ -64,8 +64,8 @@ const CarDetailPage = () => {
       try {
         setLoading(true);
         const [carRes, allCarsRes] = await Promise.all([
-          axios.get(`http://127.0.0.1:8000/api/cars/${id}`),
-          axios.get('http://127.0.0.1:8000/api/cars')
+          axios.get(`http://rentaljek.com/api/cars/${id}`),
+          axios.get('http://rentaljek.com/api/cars')
         ]);
         setCar(carRes.data.data);
         // Get 2 other random cars for "Explore More"
@@ -128,7 +128,7 @@ const CarDetailPage = () => {
     setSubmitting(true);
     setBookingError('');
     try {
-      await axios.post('http://127.0.0.1:8000/api/reservations', {
+      await axios.post('http://rentaljek.com/api/reservations', {
         car_id: car.id,
         start_date: startDate,
         end_date: endDate

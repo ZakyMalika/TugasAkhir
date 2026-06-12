@@ -111,7 +111,7 @@ export default function AdminBookings() {
         params.status = statusFilter;
       }
       // 'done' = show all (completed + cancelled are filtered client-side in sections)
-      const res = await axios.get('http://127.0.0.1:8000/api/reservations', {
+      const res = await axios.get('http://rentaljek.com/api/reservations', {
         headers: { Authorization: `Bearer ${token}` },
         params,
       });
@@ -157,7 +157,7 @@ export default function AdminBookings() {
     const token = localStorage.getItem('admin_token');
     try {
       await axios.put(
-        `http://127.0.0.1:8000/api/reservations/${id}/status`,
+        `http://rentaljek.com/api/reservations/${id}/status`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );

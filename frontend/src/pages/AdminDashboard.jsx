@@ -15,7 +15,7 @@ const AdminDashboard = () => {
     const fetchStats = async () => {
       try {
         const token = localStorage.getItem('admin_token');
-        const res = await axios.get('http://127.0.0.1:8000/api/dashboard/stats', {
+        const res = await axios.get('http://rentaljek.com/api/dashboard/stats', {
           headers: { Authorization: `Bearer ${token}` }
         });
         const data = res.data.data;

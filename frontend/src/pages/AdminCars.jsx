@@ -121,7 +121,7 @@ const AdminCars = () => {
         // Directly send the selected status to the backend
         params.status = statusFilter;
       }
-      const res = await axios.get('http://127.0.0.1:8000/api/cars', { params });
+      const res = await axios.get('http://rentaljek.com/api/cars', { params });
       setCars(res.data.data);
       setLoading(false);
     } catch (err) {
@@ -146,10 +146,10 @@ const AdminCars = () => {
     const headers = { Authorization: `Bearer ${token}` };
     try {
       if (currentCar) {
-        await axios.put(`http://127.0.0.1:8000/api/cars/${currentCar.id}`, formData, { headers });
+        await axios.put(`http://rentaljek.com/api/cars/${currentCar.id}`, formData, { headers });
         showToast('Mobil berhasil diperbarui!', 'success');
       } else {
-        await axios.post('http://127.0.0.1:8000/api/cars', formData, { headers });
+        await axios.post('http://rentaljek.com/api/cars', formData, { headers });
         showToast('Mobil berhasil ditambahkan!', 'success');
       }
       setIsModalOpen(false);
@@ -178,7 +178,7 @@ const AdminCars = () => {
     const token = localStorage.getItem('admin_token');
     const headers = { Authorization: `Bearer ${token}` };
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/cars/${id}`, { headers });
+      await axios.delete(`http://rentaljek.com/api/cars/${id}`, { headers });
       showToast('Mobil berhasil dihapus!', 'success');
       fetchCars();
     } catch (err) {

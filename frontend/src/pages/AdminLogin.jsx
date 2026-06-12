@@ -26,7 +26,7 @@ export default function AdminLogin() {
     setError('');
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/login', formData);
+      const response = await axios.post('http://rentaljek.com/api/login', formData);
       
       const { user, access_token } = response.data.data;
 
